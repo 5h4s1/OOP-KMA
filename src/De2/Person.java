@@ -1,4 +1,4 @@
-package De1;
+package De2;
 
 public class Person {
     private String name;
@@ -44,7 +44,6 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
 
     public void show() {
         System.out.println("Name: " + name);

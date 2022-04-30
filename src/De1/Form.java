@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -54,19 +55,27 @@ public class Form extends JFrame{
             }
         });
 
-
         saveData.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String fileName = "sinhvien.dat";
-
+                    String fileName = "./src/De1/sinhvien.dat";
                     FileWriter jw = new FileWriter(fileName, false);
-
-                    PrintWriter pw = new PrintWriter(jw);
-                    pw.println(personList.toString());
-                    pw.close();
-                    jw.close();
+                    PrintWriter bw = new PrintWriter(jw);
+                    for (Student st : personList) {
+                        System.out.println(st);
+                        bw.write(st.getName() + "\t");
+                        bw.write(st.getDateOfBirth() + "\t");
+                        bw.write(st.getAddress() + "\t");
+                        bw.write(st.getGender() + "\t");
+                        bw.write(st.getId() + "\t");
+                        bw.write(st.getEmail() + "\t");
+                        bw.write(Float.toString(st.getGpa()));
+                        bw.println();
+                    }
+                    JOptionPane.showMessageDialog(null, "Lưu thành công");
+                    bw.close();
+                    bw.close();
                 }
                 catch (Exception ex)
                 {
