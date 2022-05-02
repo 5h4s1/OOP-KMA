@@ -22,7 +22,7 @@ public class Form extends JFrame{
     private JTextField textBaseSalary;
     private JButton addEmployeeButton;
     private JButton saveListButton;
-    private List<Employee> employeeList;
+    private final List<Employee> employeeList;
 
     public Form() {
         super("Manager Employee");
@@ -68,7 +68,7 @@ public class Form extends JFrame{
                         pw.write("\t\t" + employee.getDateOfBirth());
                         pw.write("\t\t" + employee.getAddress());
                         pw.write("\t\t" + employee.getGender());
-                        pw.write("\t\t" + employee.getDateOfBirth());
+                        pw.write("\t\t" + employee.getDepartment());
                         pw.write("\t\t" + employee.getCoefficientsSalary());
                         pw.write("\t\t" + employee.getSeniority());
                         pw.write("\t\t" + employee.getBaseSalary());
